@@ -5,7 +5,14 @@ const newArr = [];
 //   console.log(arr[i]);
 // }
 
-// 향상된 포문, 일반 포문(출력하는 것이다.)
+// 향상된 포문
+for (let e of arr) {
+  // console.log(e);
+}
+
+// console.log("================");
+
+// 배열내장객체 forEach(출력하는 것이다.)
 arr.forEach((e) => {
   // console.log(e);
   // newArr.push(e * 2);
@@ -16,14 +23,35 @@ arr.forEach((e) => {
 
 // console.log(newArr);
 
-// 배열내장객체 map => 위도,경도 => 새로운 리턴
+// 배열내장객체 map => 위도,경도 => 새로운 리턴(배열)
 const newArray2 = arr.map((e) => e * 3);
 // console.log(newArray2);
 
 // 배열내장객체 찾기, includes
+let resultFind2 = false;
+arr.forEach((e) => {
+  if (e === 3) {
+    resultFind2 = true;
+  }
+});
+// console.log(resultFind2);
+
+let resultFind = arr.includes(3);
+// console.log(resultFind);
+
 // console.log(`4값체크유무: ${arr.includes(4)}`);
 
 // 배열내장객체 indexOf
+let count = -1;
+let findIndex = -1;
+arr.forEach((e) => {
+  count++;
+  if (e === 4) {
+    findIndex = count;
+  }
+});
+// console.log(findIndex);
+
 // console.log(`4값위치: ${arr.indexOf(4)}`);
 
 // 배열내장객체 findIndex
@@ -47,7 +75,7 @@ let arr6 = [
 const resultArray2 = arr6.filter((e) => {
   return e.hobby === "테니스";
 });
-console.log(resultArray2);
+// console.log(resultArray2);
 
 // 배열내장객체 map
 const resultArray3 = arr6.map((e) => {
