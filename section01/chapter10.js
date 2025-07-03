@@ -1,4 +1,4 @@
-// 배열 내장함수(forEach)
+// 배열내장함수(forEach)
 const arr = [1, 2, 3, 4];
 const newArr = [];
 // for (let i = 0; i < arr.length; i++) {
