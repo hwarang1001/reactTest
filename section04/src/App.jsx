@@ -1,19 +1,28 @@
-import Bulb from "./components/Bulb";
 import { useState } from "react";
+import Bulb from "./components/Bulb";
+import BulbButton from "./components/BulbButton";
+import Count from "./components/Count";
+import CountButton from "./components/CountButton";
 
 export default function App() {
+  // 상태값
   const [light, setLight] = useState("OFF");
+  const [count, setCount] = useState(0);
+
+  // 이벤트핸들러
+  const lightClickButton = () => {
+    setLight(light === "ON" ? "OFF" : "ON");
+  };
+  const countClickButton = () => {
+    setCount(count + 1);
+  };
   return (
     <>
       <div>
         <Bulb light={light} />
-        <button
-          onClick={() => {
-            setLight(light === "ON" ? "OFF" : "ON");
-          }}
-        >
-          {light === "ON" ? "끄기" : "켜기"}
-        </button>
+        <BulbButton light={light} lightClickButton={lightClickButton} />
+        <Count count={count} />
+        <CountButton countClickButton={countClickButton} />
       </div>
     </>
   );
