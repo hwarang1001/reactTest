@@ -16,37 +16,10 @@ function App() {
   };
   return (
     <div className="App">
-      <MemberTbl User={User} userList={userList} />
-      <RegistWrap registUser={registUser} InputWrap={InputWrap} />
+      <MemberTbl userList={userList} />
+      <RegistWrap registUser={registUser} />
     </div>
   );
 }
-
-const User = (props) => {
-  const user = props.user;
-  return (
-    <tr>
-      <td>{user.name}</td>
-      <td>{user.age}</td>
-      <td>{user.gender}</td>
-      <td>{user.phone}</td>
-    </tr>
-  );
-};
-
-const InputWrap = (props) => {
-  const text = props.text;
-  const data = props.data;
-  const setData = props.setData;
-  const changeInputValue = (e) => {
-    setData(e.target.value);
-  };
-  return (
-    <div className="input_wrap">
-      <label>{text}</label>
-      <input type="text" value={data} onChange={changeInputValue} />
-    </div>
-  );
-};
 
 export default App;

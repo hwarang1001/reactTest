@@ -1,6 +1,6 @@
 import { useState } from "react";
-
-const RegistWrap = ({ registUser, InputWrap }) => {
+import InputWrap from "./InputWrap";
+const RegistWrap = ({ registUser }) => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");

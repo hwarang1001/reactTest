@@ -1,4 +1,6 @@
-const MemberTbl = ({ User, userList }) => {
+import User from "./User";
+
+const MemberTbl = ({ userList }) => {
   return (
     <div>
       <h1>회원 정보 출력</h1>
