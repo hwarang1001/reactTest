@@ -1,26 +1,53 @@
 import { useState } from "react";
-import InputWrap from "./InputWrap";
+import "./RegistWrap.css";
+
 const RegistWrap = ({ registUser }) => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
   const [phone, setPhone] = useState("");
-  const onClickBtn = () => {
+  const onClickRegister = () => {
     registUser(name, age, gender, phone);
     setName("");
     setAge("");
     setGender("");
     setPhone("");
   };
+  const onChangeName = (e) => {
+    setName(e.target.value);
+  };
+  const onChangeAge = (e) => {
+    setAge(e.target.value);
+  };
+  const onChangeGender = (e) => {
+    setGender(e.target.value);
+  };
+  const onChangePhone = (e) => {
+    setPhone(e.target.value);
+  };
   return (
     <div className="regist-wrap">
-      <h3>회원 정보 등록</h3>
+      <h1>회원 정보 등록</h1>
       <hr></hr>
-      <InputWrap text="이름" data={name} setData={setName} />
-      <InputWrap text="나이" data={age} setData={setAge} />
-      <InputWrap text="성별" data={gender} setData={setGender} />
-      <InputWrap text="전화번호" data={phone} setData={setPhone} />
-      <button onClick={onClickBtn}>회원등록</button>
+      <div className="input_wrap">
+        <label>{"이름"}</label>
+        <input type="text" value={name} onChange={onChangeName} />
+      </div>
+      <div className="input_wrap">
+        <label>{"나이"}</label>
+        <input type="text" value={age} onChange={onChangeAge} />
+      </div>
+      <div className="input_wrap">
+        <label>{"성별"}</label>
+        <input type="text" value={gender} onChange={onChangeGender} />
+      </div>
+      <div className="input_wrap">
+        <label>{"전화번호"}</label>
+        <input type="text" value={phone} onChange={onChangePhone} />
+      </div>
+      <div className="button_wrap">
+        <button onClick={onClickRegister}>회원등록</button>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,33 @@
+.regist-wrap{
+  width: 100%;
+}
+.regist-wrap .input_wrap {
+  padding: 10px;
+}
+.regist-wrap  .input_wrap > label {
+  display: inline-block;
+  width: 20%;
+  padding-left: 20px;
+  font-size: 18px;
+}
+.regist-wrap .input_wrap > input {
+  width: 60%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.regist-wrap .button_wrap{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.regist-wrap .button_wrap > button{
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  cursor:pointer
+}

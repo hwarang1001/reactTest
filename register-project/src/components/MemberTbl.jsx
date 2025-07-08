@@ -1,11 +1,10 @@
-import User from "./User";
-
+import "./MemberTbl.css";
 const MemberTbl = ({ userList }) => {
   return (
-    <div>
+    <div className="member_tbl">
       <h1>회원 정보 출력</h1>
       <hr></hr>
-      <table className="member_tbl">
+      <table>
         <thead>
           <tr>
             <th>이름</th>
@@ -15,8 +14,14 @@ const MemberTbl = ({ userList }) => {
           </tr>
         </thead>
         <tbody>
-          {userList.map((user, index) => (
-            <User key={"user" + index} user={user} />
+          {userList.map((data) => (
+            <tr>
+              <td>{data.name}</td>
+              <td>{data.age}</td>
+              <td>{data.gender}</td>
+              <td>{data.phone}</td>
+              <button>삭제</button>
+            </tr>
           ))}
         </tbody>
       </table>
