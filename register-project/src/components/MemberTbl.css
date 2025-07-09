@@ -18,8 +18,13 @@
   padding: 20px;
 
 }
-.member_tbl button{
+.member_tbl .button{
+  display: flex;
+  gap: 10px;
+}
+.member_tbl .button > button{
   border: 1px solid #ccc;
   text-align: center;
-  padding: 12px;
+  padding: 10px;
+  cursor: pointer;
 }
