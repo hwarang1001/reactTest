@@ -1,0 +1,13 @@
+.App{
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px dotted black;
+  margin-bottom: 10px;
+}
+.App > img{
+  width: 50px;
+}
