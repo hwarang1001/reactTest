@@ -1,21 +1,34 @@
-import { useSearchParams } from "react-router-dom";
+import Header from "../components/Header";
+import Button from "../components/Button";
+import Editor from "../components/Editor";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { DiaryDispatchContext } from "../App";
 
 const New = () => {
-  const [searchParams, SetSearchParams] = useSearchParams();
-  const updateNameParam = (name, age) => {
-    SetSearchParams({ name: name, age: age });
+  const { onInsert } = useContext(DiaryDispatchContext);
+  const nav = useNavigate();
+
+  // 작성완료
+  const onSubmit = (input) => {
+    onInsert(input.createdDate.getTime(), input.emotionId, input.content);
+    //뒤로가기 방지하면서 / 페이지 이동
+    nav("/", { replace: true });
   };
   return (
     <div>
-      New ? {searchParams.get("name")} <br />
-      New ? {searchParams.get("age")} <br />
-      <button
-        onClick={() => {
-          updateNameParam("kdj", "20");
-        }}
-      >
-        쿼리스트링 값변경하기
-      </button>
+      <Header
+        title={"새 일기 쓰기"}
+        leftChild={
+          <Button
+            text={"< 뒤로 가기"}
+            onClick={() => {
+              nav(-1);
+            }}
+          />
+        }
+      />
+      <Editor onSubmit={onSubmit} />
     </div>
   );
 };
