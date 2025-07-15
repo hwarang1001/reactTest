@@ -1,9 +1,12 @@
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
+import root from "./router/root";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <>
-      <h1>Mall Project</h1>
+      <RouterProvider router={root} />
     </>
   );
 }
