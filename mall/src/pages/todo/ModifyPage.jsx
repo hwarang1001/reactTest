@@ -1,11 +1,12 @@
 import { Container } from "react-bootstrap";
 import Header from "../../include/Header";
-import ModifyComponent from "../../components/todo/ModifyComponent";
+import { useParams } from "react-router";
 const ModifyPage = () => {
+  const { tno } = useParams();
   return (
     <Container>
       <Header />
-      <ModifyComponent />
+      <h1>To do ModifyPage {tno}</h1>
     </Container>
   );
 };
