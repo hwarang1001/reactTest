@@ -1,0 +1,25 @@
+.member_table {
+  width: 70%;
+  margin: 30px auto;
+  font-size: 14px;
+  background-color: rgb(236, 236, 236);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.member_table thead{
+  background-color: rgb(216, 206, 206);
+  color: #fff;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+.search input {
+  padding: 8px 12px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
