@@ -26,7 +26,7 @@ const ReadComponent = ({ tno }) => {
           <Form.Group>
             <Form.Label>TNO</Form.Label>
             <Form.Control
-              defaultValue={todo.tno}
+              defaultValue={tno}
               type="text"
               placeholder="Enter no"
               disabled

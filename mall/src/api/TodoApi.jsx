@@ -18,7 +18,10 @@ export const getList = async (pageParam) => {
   return result.data;
 };
 // 삽입
-
+export const postAdd = async (todo) => {
+  const result = await axios.post(`${prefix}/`, todo);
+  return result.data;
+};
 // 수정
 
 // 삭제
