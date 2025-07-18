@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import ModifyComponent from "../../components/todo/ModifyComponent";
+import ModifyComponent from "../../component/todo/ModifyComponent";
 import Header from "../../include/Header";
 import useCustomMove from "../../hooks/useCustomMove";
 
