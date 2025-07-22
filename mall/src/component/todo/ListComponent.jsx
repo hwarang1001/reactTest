@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getList } from "../../api/todoApi";
 import useCustomMove from "../../hooks/useCustomMove";
-import { Container, Table } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import PageComponent from "../common/PageComponent";
 
 const initState = {

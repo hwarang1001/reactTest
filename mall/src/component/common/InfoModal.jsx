@@ -10,8 +10,13 @@ const SignUpModal = ({ show, onHide, title, content, callbackFn }) => {
       centered
     >
       <Container>
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">{title}</Modal.Title>
+        <Modal.Header>
+          <Modal.Title
+            className="w-100 text-center"
+            id="contained-modal-title-vcenter"
+          >
+            {title}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
