@@ -4,6 +4,7 @@ import { API_SERVER_HOST } from "../../api/todoApi";
 import useCustomMove from "../../hooks/useCustomMove";
 import FetchingModal from "../common/FetchingModal";
 import { Container, Form } from "react-bootstrap";
+
 const initState = {
   pno: 0,
   pname: "",
@@ -12,10 +13,12 @@ const initState = {
   uploadFileNames: [],
 };
 const host = API_SERVER_HOST;
+
 const ReadComponent = ({ pno }) => {
   const [product, setProduct] = useState(initState);
-  const { moveProductToList, moveProductToModify } = useCustomMove();
-  const [fetching, setFetching] = useState(false);
+  const { moveProductToList, moveProductToModify } = useCustomMove(); //화면 이동용 함수
+  const [fetching, setFetching] = useState(false); //fetching
+
   useEffect(() => {
     setFetching(true);
     getOne(pno).then((data) => {
@@ -23,6 +26,7 @@ const ReadComponent = ({ pno }) => {
       setFetching(false);
     });
   }, [pno]);
+
   return (
     <Container className="p-5">
       {fetching ? <FetchingModal /> : <></>}
@@ -70,12 +74,8 @@ const ReadComponent = ({ pno }) => {
             <img
               alt="product"
               key={i}
-              style={{
-                width: "14rem",
-                height: "14rem",
-                border: "1px solid black",
-              }}
-              src={`${host}/api/products/view/${imgFile}`}
+              style={{ width: "14rem", height: "14rem" }}
+              src={`${host}/api/products/view/s_${imgFile}`}
             />
           ))}
         </Form.Group>
@@ -103,5 +103,4 @@ const ReadComponent = ({ pno }) => {
     </Container>
   );
 };
-
 export default ReadComponent;

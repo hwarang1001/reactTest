@@ -89,8 +89,8 @@ const ModifyComponent = ({ pno }) => {
       {result ? (
         <InfoModal
           show={true}
-          title={`${result}`}
-          content={"정상적으로 처리되었습니다."}
+          title={`결과상태`}
+          content={`${product.pno}번 ${result} 완료`}
           callbackFn={closeModal}
         />
       ) : (
@@ -98,6 +98,17 @@ const ModifyComponent = ({ pno }) => {
       )}
 
       <Form>
+        <Form.Group className="mb-3">
+          <Form.Label>PNO</Form.Label>
+          <Form.Control
+            name="pno"
+            defaultValue={product.pno}
+            type="text"
+            placeholder="Enter name"
+            disabled
+          />
+        </Form.Group>
+
         <Form.Group className="mb-3">
           <Form.Label>PNAME</Form.Label>
           <Form.Control
@@ -129,17 +140,7 @@ const ModifyComponent = ({ pno }) => {
             onChange={handleChangeProduct}
           />
         </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>DELETE</Form.Label>
-          <Form.Select
-            name="delFlag"
-            defaultValue={product.delFlag ? "사용" : "삭제"}
-            onChange={handleChangeProduct}
-          >
-            <option value={false}>사용</option>
-            <option value={true}>삭제</option>
-          </Form.Select>
-        </Form.Group>
+
         <Form.Group className="mb-3">
           <Form.Label>Files</Form.Label>
           <Form.Control ref={uploadRef} type="file" multiple="true" />
