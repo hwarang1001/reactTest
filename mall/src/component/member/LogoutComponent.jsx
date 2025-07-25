@@ -1,17 +1,14 @@
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { useDispatch } from "react-redux";
-import { logout } from "../../slice/loginSlice";
-import { useNavigate } from "react-router-dom";
+import useCustomLogin from "../../hooks/useCoustomLogin";
 
 const LogoutComponent = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
+  const { doLogout, moveToPath } = useCustomLogin();
   const handleClickLogout = () => {
-    dispatch(logout());
-    navigate({ pathname: "/" }, { replace: true });
+    doLogout();
+    alert("로그아웃되었습니다.");
+    moveToPath("/");
   };
 
   return (

@@ -1,8 +1,6 @@
-import { React, useState } from "react";
+import { useState } from "react";
 import { FloatingLabel, Form, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { login } from "../../slice/loginSlice";
+import useCustomLogin from "../../hooks/useCoustomLogin";
 
 const initState = {
   email: "",
@@ -11,15 +9,23 @@ const initState = {
 
 const LoginComponent = () => {
   const [loginParam, setLoginParam] = useState({ ...initState });
-  const dispatch = useDispatch();
-
+  const { doLogin, moveToPath } = useCustomLogin();
   const handleChange = (e) => {
     loginParam[e.target.name] = e.target.value;
     setLoginParam({ ...loginParam });
   };
 
   const handleClickLogin = (e) => {
-    dispatch(login(loginParam));
+    doLogin(loginParam).then((data) => {
+      if (data.error) {
+        alert("이메일과 패스워드를 다시 입력해주세요.");
+      } else {
+        alert(`${data.nickname}님 환영합니다.`);
+        moveToPath("/");
+      }
+      console.log("after unwrap");
+      console.log(data);
+    });
   };
   return (
     <>
