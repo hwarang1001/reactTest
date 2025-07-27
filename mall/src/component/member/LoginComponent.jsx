@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FloatingLabel, Form, Button } from "react-bootstrap";
 import useCustomLogin from "../../hooks/useCoustomLogin";
+import KakaoLoginComponent from "./KakaoLoginComponent";
 
 const initState = {
   email: "",
@@ -56,6 +57,7 @@ const LoginComponent = () => {
         <Button variant="outline-primary" onClick={handleClickLogin}>
           로그인
         </Button>
+        <KakaoLoginComponent />
       </div>
     </>
   );

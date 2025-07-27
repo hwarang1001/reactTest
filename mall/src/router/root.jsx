@@ -14,9 +14,10 @@ const ProductListPage = lazy(() => import("../pages/product/ListPage"));
 const ProductAddPage = lazy(() => import("../pages/product/AddPage"));
 const ProductReadPage = lazy(() => import("../pages/product/ReadPage"));
 const ProductModifyPage = lazy(() => import("../pages/product/ModifyPage"));
-// MemberPage
+// LoginPage
 const LoginPage = lazy(() => import("../pages/member/LoginPage"));
 const LogoutPage = lazy(() => import("../pages/member/LogoutPage"));
+const KakaoRedirect = lazy(() => import("../pages/member/KakaoRedirectPage"));
 
 const root = createBrowserRouter([
   // RootPage
@@ -102,7 +103,7 @@ const root = createBrowserRouter([
       </Suspense>
     ),
   },
-  // MemberPage
+  // LoginPage
   {
     path: "/member/login",
     element: (
@@ -116,6 +117,14 @@ const root = createBrowserRouter([
     element: (
       <Suspense fallback={<Loading />}>
         <LogoutPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/member/kakao",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <KakaoRedirect />
       </Suspense>
     ),
   },
