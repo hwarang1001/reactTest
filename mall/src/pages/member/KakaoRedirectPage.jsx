@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { getAccessToken, getMemberWithAccessToken } from "../../api/KakaoApi";
+import { getAccessToken, getMemberWithAccessToken } from "../../api/kakaoApi";
 import { useDispatch } from "react-redux";
-import useCustomLogin from "../../hooks/useCoustomLogin";
 import { login } from "../../slice/loginSlice";
+import useCustomLogin from "../../hooks/useCoustomLogin";
+
 const KakaoRedirectPage = () => {
   const [searchParams] = useSearchParams();
   const authCode = searchParams.get("code");
